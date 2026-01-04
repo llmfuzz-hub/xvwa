@@ -24,7 +24,7 @@ function cleanup($conn,$XVWA_WEBROOT){
     // clean the database
     $tables = array('comments','caffaine','users');
     for($i=0;$i<count($tables);$i++){
-        $sql = 'DROP TABLE '. $tables[$i].';';
+        $sql = 'DROP TABLE IF EXISTS '. $tables[$i].';';
         $sqlexec = $conn->query($sql);
     }
     // clean extra files
